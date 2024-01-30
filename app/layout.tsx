@@ -14,8 +14,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
+  return ( 
+    <html data-theme='light'>
       <body className={inter.className}>{children}</body>
     </html>
   );
