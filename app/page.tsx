@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import NavBar from "./navBar";
 import { fetchMovies } from "./store";
 import { MovieResult } from './type'
+import MovieCard from "./card";
 
 
 export default function Home() {
@@ -22,10 +23,11 @@ export default function Home() {
     <>
     <div>
       <NavBar/>
+      <div className="flex fixed bg-red-600 justify-between overflow-x-scroll">
       {moviesInfo?.results.map((movie) => (
-        <img src={'https://image.tmdb.org/t/p/original/' + movie.backdrop_path}/>
-
+        <MovieCard movie_img={movie.poster_path}/>
       ))}
+      </div>
     </div>
     </>
   );
