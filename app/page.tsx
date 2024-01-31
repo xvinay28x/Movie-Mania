@@ -15,15 +15,15 @@ export default function Home() {
     fetchMovies()
     .then((res) => {
       setMoviesInfo(res)
-      console.log()
+      
     })
   },[])
 
   return (
     <>
-    <div>
+    <div className="h-screen bg-stone-950 ">
       <NavBar/>
-      <div className="flex fixed bg-red-600 justify-between overflow-x-scroll">
+      <div className="grid grid-flow-col scrollbar-hide gap-4 items-center w-full overflow-x-scroll p-8">
       {moviesInfo?.results.map((movie) => (
         <MovieCard movie_img={movie.poster_path}/>
       ))}
