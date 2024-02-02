@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import NavBar from "./navBar";
 import { fetchMovies } from "./store";
 import { MovieResult } from './type'
-import MovieCard from "./card";
+import {VerticalMovieCard, HorizontalMovieCard} from "./card";
+
 
 
 export default function Home() {
@@ -21,11 +22,16 @@ export default function Home() {
 
   return (
     <>
-    <div className="h-screen bg-stone-950 ">
+    <div className="h-screen w-screen bg-stone-950">
       <NavBar/>
-      <div className="grid grid-flow-col scrollbar-hide gap-4 items-center w-full overflow-x-scroll p-8">
+      <div className="grid grid-flow-col scrollbar-hide gap-4 items-center w-full overflow-x-scroll py-12">
       {moviesInfo?.results.map((movie) => (
-        <MovieCard movie_img={movie.poster_path}/>
+        <HorizontalMovieCard movie_img={movie.backdrop_path} />
+      ))}
+      </div>
+      <div className="grid grid-flow-col scrollbar-hide gap-4 items-center w-full overflow-x-scroll py-12">
+      {moviesInfo?.results.map((movie) => (
+        <VerticalMovieCard movie_img={movie.poster_path} />
       ))}
       </div>
     </div>
