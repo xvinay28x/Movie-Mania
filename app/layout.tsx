@@ -1,6 +1,11 @@
+"use client";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import NavBar from "./navBar";
+import { useAtom } from "jotai";
+import { themeAtom } from "./store";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +19,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return ( 
-    <html data-theme='light'>
-      <body className={inter.className}>{children}</body>
+  const theme = useAtom<string>(themeAtom);
+  return (
+    <html data-theme={theme}>
+      <body className={inter.className}>
+        <nav>
+          <NavBar />
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }

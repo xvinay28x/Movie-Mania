@@ -1,13 +1,13 @@
-import { atom } from 'jotai'
-import { MovieResult } from './type'
+import { atom } from "jotai";
+import { MovieResult } from "./type";
 
+export const themeAtom = atom<string>("dark");
+const url =
+  "https://api.themoviedb.org/3/discover/movie?api_key=01126075146f47286524e995425874ad";
 
-const url = 'https://api.themoviedb.org/3/discover/movie?api_key=01126075146f47286524e995425874ad';
+const isLoading = atom<boolean>(false);
 
-const isLoading = atom<boolean>(false)
-
-export async function fetchMovies():Promise<MovieResult>{
-    const response = await fetch(url)
-    return await response.json()
+export async function fetchMovies(): Promise<MovieResult> {
+  const response = await fetch(url);
+  return await response.json();
 }
-
