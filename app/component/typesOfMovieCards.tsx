@@ -1,49 +1,40 @@
-import {fetchMovies} from "../store";
-import {MovieResult} from '../type'
+'use client'
+
+import {fetchMoviesAtom, isLoading} from "../store";
+import {MovieResult} from "../type";
 import {useEffect, useState} from "react";
-import {PortraitMovieCard, LandscapeMovieCard} from "./card";
+import MovieCard from "@/app/component/card";
+import Skeleton from "@/app/component/skeleton";
+import {useAtom} from "jotai";
 
-
-export default function TypeCards({orientation, title,}: { orientation: Orientation, title: string }) {
-
-    const [moviesInfo, setMoviesInfo] = useState<MovieResult>()
+export default function TypeCards({title}: { title: string }) {
+    const [moviesInfo, setMoviesInfo] = useState<MovieResult>();
+    const [, getMovie] = useAtom(fetchMoviesAtom)
+    const [loading] = useAtom(isLoading)
 
     useEffect(() => {
-        fetchMovies()
-            .then((res) => {
-                setMoviesInfo(res)
-
-            })
-    }, [])
-
+        getMovie().then((res) => {
+            setMoviesInfo(res);
+        });
+    }, []);
 
     return (
-        <>
+        <div className="text-2xl mt-4">
+            <p className="cursor-pointer">{title}</p>
+            <div
+                className="grid grid-flow-col scrollbar-hide gap-4 items-center w-full overflow-x-scroll scroll-smooth py-4">
 
-            <div className="text-white text-2xl font-mono font-bold mt-4">
-                <p className="cursor-pointer">{title}</p>
-                <div className="grid grid-flow-col scrollbar-hide gap-4 items-center w-full overflow-x-scroll scroll-smooth py-4">
-                    {
-                        moviesInfo?.results.map((movie) => {
-                            let movieCard
-                            switch (orientation) {
-                                case Orientation.Portrait:
-                                    movieCard = <PortraitMovieCard movie_img={movie.poster_path}/>
-                                    break;
-                                case Orientation.Landscape:
-                                    movieCard = <LandscapeMovieCard movie_img={movie.backdrop_path}/>
-                                    break;
-                            }
-                            return movieCard
-                        })
-                    }
-                </div>
+                {loading ?
+
+                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+                        <Skeleton key={item}/>
+                    )) :
+                    moviesInfo?.results.map((movie) => (
+                        <MovieCard movieInfo={movie} key={movie.id}/>
+                    ))
+
+                }
             </div>
-
-        </>)
-}
-
-export enum Orientation {
-    Portrait,
-    Landscape,
+        </div>
+    );
 }
