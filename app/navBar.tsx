@@ -51,7 +51,7 @@ export default function NavBar() {
                         <input
                             type="text"
                             placeholder="Type here"
-                            className="input input-bordered w-80 h-10 bg-stone-800 mx-4"
+                            className="input input-bordered w-80 h-10 bg-stone-800 mx-4 lg:hidden"
                         />
                         <button className="btn btn-ghost btn-circle hover:bg-stone-800">
                             <svg

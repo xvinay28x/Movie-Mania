@@ -3,8 +3,7 @@ import {Movie} from '@/app/type'
 import React, {useState} from 'react'
 import {useRouter} from 'next/navigation'
 import Skeleton from "@/app/component/skeleton";
-import {useAtom} from "jotai";
-import {isLoading} from "@/app/store";
+import Rating from "@/app/component/rating";
 
 export default function MovieCard({
                                       movieInfo
@@ -13,6 +12,8 @@ export default function MovieCard({
 }) {
     const [isHover, setIsHover] = useState<boolean>(false)
     const router = useRouter()
+
+    const rating = Math.round(movieInfo.vote_average/2)
 
     const [loaded, setLoaded] = useState(false)
 
@@ -28,9 +29,10 @@ export default function MovieCard({
         >
             {isHover ?
                 <div
-                    className="rounded-md bg-black text-white text-left text-sm p-4 h-full w-full"
+                    className="rounded-md bg-black text-white text-left text-sm p-4 h-full w-full overflow-x-scroll scrollbar-hide"
                 >
                     <div className="text-lg">{movieInfo.title}</div>
+                    <div className="flex justify-start"><Rating rating={rating}/></div>
                     <div className="font-serif text-stone-500">{movieInfo.release_date}</div>
                     <div className="text-stone-400 overflow-y-scroll scrollbar-hide h-1/2">{movieInfo.overview}</div>
                     <div className="btn mt-2 btn-outline btn-info btn-sm"
@@ -46,7 +48,7 @@ export default function MovieCard({
                         width={0}
                         height={0}
                         sizes="100vw"
-                        className={`w-full h-full cursor-pointer rounded ${(!loaded) ? 'opacity-0' : 'opacity-100'}`}
+                        className={`w-full h-full cursor-pointer rounded-md ${(!loaded) ? 'opacity-0' : 'opacity-100'}`}
                         onLoadingComplete={() => setLoaded(true)}
 
                     />

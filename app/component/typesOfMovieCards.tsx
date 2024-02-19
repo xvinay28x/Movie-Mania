@@ -1,19 +1,20 @@
 'use client'
 
-import {fetchMoviesAtom, isLoading} from "../store";
+import {ApiTypes, fetchMoviesAtom, isLoading} from "../store";
 import {MovieResult} from "../type";
 import {useEffect, useState} from "react";
 import MovieCard from "@/app/component/card";
 import Skeleton from "@/app/component/skeleton";
 import {useAtom} from "jotai";
 
-export default function TypeCards({title}: { title: string }) {
+
+export default function TypeCards({title, apiFor}: { title: string, apiFor: ApiTypes }) {
     const [moviesInfo, setMoviesInfo] = useState<MovieResult>();
     const [, getMovie] = useAtom(fetchMoviesAtom)
     const [loading] = useAtom(isLoading)
 
     useEffect(() => {
-        getMovie().then((res) => {
+        getMovie(apiFor).then((res) => {
             setMoviesInfo(res);
         });
     }, []);
