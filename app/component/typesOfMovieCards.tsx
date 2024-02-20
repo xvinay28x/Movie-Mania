@@ -1,41 +1,41 @@
 'use client'
 
-import {ApiTypes, fetchMoviesAtom, isLoading} from "../store";
-import {MovieResult} from "../type";
-import {useEffect, useState} from "react";
-import MovieCard from "@/app/component/card";
-import Skeleton from "@/app/component/skeleton";
-import {useAtom} from "jotai";
+import { MovieType, fetchMoviesAtom, isLoading } from '../store'
+import { MovieResult } from '../type'
+import { useEffect, useState } from 'react'
+import MovieCard from '@/app/component/card'
+import Skeleton from '@/app/component/skeleton'
+import { useAtom } from 'jotai'
 
+export default function TypeCards({
+  title,
+  movieType,
+}: {
+  title: string
+  movieType: MovieType
+}) {
+  const [moviesInfo, setMoviesInfo] = useState<MovieResult>()
+  const [, getMovie] = useAtom(fetchMoviesAtom)
+  const [loading] = useAtom(isLoading)
 
-export default function TypeCards({title, apiFor}: { title: string, apiFor: ApiTypes }) {
-    const [moviesInfo, setMoviesInfo] = useState<MovieResult>();
-    const [, getMovie] = useAtom(fetchMoviesAtom)
-    const [loading] = useAtom(isLoading)
+  useEffect(() => {
+    getMovie(movieType).then((res) => {
+      setMoviesInfo(res)
+    })
+  }, [])
 
-    useEffect(() => {
-        getMovie(apiFor).then((res) => {
-            setMoviesInfo(res);
-        });
-    }, []);
-
-    return (
-        <div className="text-2xl mt-4">
-            <p className="cursor-pointer">{title}</p>
-            <div
-                className="grid grid-flow-col scrollbar-hide gap-4 items-center w-full overflow-x-scroll scroll-smooth py-4">
-
-                {loading ?
-
-                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-                        <Skeleton key={item}/>
-                    )) :
-                    moviesInfo?.results.map((movie) => (
-                        <MovieCard movieInfo={movie} key={movie.id}/>
-                    ))
-
-                }
-            </div>
-        </div>
-    );
+  return (
+    <div className="text-2xl mt-4">
+      <p className="cursor-pointer">{title}</p>
+      <div className="grid grid-flow-col scrollbar-hide gap-4 items-center w-full overflow-x-scroll scroll-smooth py-4">
+        {loading
+          ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+              <Skeleton key={item} />
+            ))
+          : moviesInfo?.results.map((movie) => (
+              <MovieCard movieInfo={movie} key={movie.id} />
+            ))}
+      </div>
+    </div>
+  )
 }
