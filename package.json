@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "axios": "^1.6.5",
     "jotai": "^2.6.2",
     "json": "^11.0.0",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-loading-skeleton": "^3.4.0",
+    "styled-components": "^6.1.8",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
@@ -27,6 +29,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
+    "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
