@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import React from 'react'
 import './globals.css'
+import Footer from '@/app/component/footer'
+import { any } from 'prop-types'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,9 +21,13 @@ export default function RootLayout({
     <html data-theme="dark">
       <head>
         <title>Movie Mania</title>
-        <link rel="icon" href="/favicon.ico" className="h-6 w-6" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <footer>
+          <Footer />
+        </footer>
+      </body>
     </html>
   )
 }
