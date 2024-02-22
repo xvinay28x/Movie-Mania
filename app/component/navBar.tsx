@@ -2,6 +2,7 @@
 
 import { useAtom } from 'jotai'
 import { themeAtom } from '../store'
+import Image from 'next/image'
 
 export default function NavBar() {
   const [theme, setTheme] = useAtom(themeAtom)
@@ -11,9 +12,11 @@ export default function NavBar() {
       <div className="p-4">
         <div className="navbar bg-stone-900 text-white rounded-2xl hover:shadow-2xl">
           <div className="navbar-start">
-            <img
+            <Image
               src="/favicon.ico"
               alt="icon"
+              width={48}
+              height={48}
               className="h-12 w-12 cursor-pointer"
             />
           </div>

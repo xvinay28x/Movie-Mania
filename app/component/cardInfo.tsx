@@ -1,3 +1,5 @@
+'use client'
+
 import Rating from '@/app/component/rating'
 import React from 'react'
 import { Movie } from '@/app/type'
@@ -14,7 +16,7 @@ export default function CardInfo({
 
   return (
     <>
-      <div className="flex flex-col h-2/3">
+      <div className="flex flex-col">
         <div className="text-lg">{movieInfo.title}</div>
         <div className="flex justify-start">
           <Rating rating={rating} />
@@ -22,12 +24,10 @@ export default function CardInfo({
         <div className="font-serif text-stone-500">
           {movieInfo.release_date}
         </div>
-        <div className="text-stone-400 overflow-y-scroll scrollbar-hide">
-          {movieInfo.overview}
-        </div>
+        <div className="text-stone-400 line-clamp-6">{movieInfo.overview}</div>
       </div>
       <div
-        className="btn mt-2 btn-outline btn-info btn-sm"
+        className="btn mt-4 btn-outline btn-info btn-sm"
         onClick={() => {
           router.push(`./movie-info/${movieInfo.id}`)
         }}
