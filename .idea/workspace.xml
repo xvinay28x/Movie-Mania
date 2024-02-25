@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec2f5c85-764e-47a1-9797-eb69f800d2ee" name="Changes" comment="" />
+    <list default="true" id="ec2f5c85-764e-47a1-9797-eb69f800d2ee" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/component/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/component/cardInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/component/cardInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/component/navBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/component/navBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +28,7 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2bpQdXQpzSV1QWlsWfJh4N1AAjQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,19 +38,23 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "make-movie-card",
+    "git-widget-placeholder": "5-create-footer-for-website",
     "last_opened_file_path": "/Users/xvinay28x/movie-mania",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/xvinay28x/movie-mania/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "/Users/xvinay28x/movie-mania/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/component" />
     </key>
   </component>
@@ -67,6 +80,10 @@
       <updated>1706909630610</updated>
       <workItem from="1706909631659" duration="5041000" />
       <workItem from="1707042802780" duration="77000" />
+      <workItem from="1708415306268" duration="85000" />
+      <workItem from="1708446341386" duration="6219000" />
+      <workItem from="1708457664023" duration="3301000" />
+      <workItem from="1708532284332" duration="7054000" />
     </task>
     <servers />
   </component>
