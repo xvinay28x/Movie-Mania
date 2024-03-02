@@ -1,14 +1,18 @@
 'use client'
 
-import NavBar from './component/navBar'
 import TypeCards from '@/app/component/typesOfMovieCards'
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import { MovieType } from '@/app/store'
+import NavBar from '@/app/component/navBar'
 
 export default function Home(): ReactElement {
   return (
     <div className="bg-black px-6">
       <NavBar />
+      <TypeCards title={'Only On Netflix'} movieType={MovieType.Netflix} />
+
+      <TypeCards title={'Trending'} movieType={MovieType.TrendingMovies} />
+
       <TypeCards
         title={'Most Popular Movies'}
         movieType={MovieType.MostPopularMovies}

@@ -9,7 +9,7 @@ export default function MovieCard({ movieInfo }: { movieInfo: Movie }) {
 
   return (
     <div
-      className={`flex w-52 group relative aspect-[2/3] transition duration-500 ease-in-out hover:scale-110 rounded-md `}
+      className={`flex w-52 group relative aspect-[2/3] transition duration-500 ease-in-out hover:scale-110 rounded-md`}
     >
       <Image
         src={'https://image.tmdb.org/t/p/original/' + movieInfo.poster_path}
@@ -22,7 +22,7 @@ export default function MovieCard({ movieInfo }: { movieInfo: Movie }) {
       />
       {!loaded && <Skeleton />}
 
-      <div className="absolute justify-between invisible opacity-90 group-hover:visible hover:transition ease-in-out rounded-md bg-black text-white text-left text-sm p-4 h-full w-full">
+      <div className="absolute border-stone-700 delay-75 border-2 justify-between invisible opacity-90 group-hover:visible hover:transition ease-in-out rounded-md bg-black text-white text-left text-sm p-4 h-full w-full overflow-y-scroll scrollbar-hide">
         <CardInfo movieInfo={movieInfo} />
       </div>
     </div>

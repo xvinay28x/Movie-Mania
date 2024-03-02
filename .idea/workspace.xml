@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec2f5c85-764e-47a1-9797-eb69f800d2ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/component/footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/@modal/default.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/@modal/movie/[movieId]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/component/movieInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/component/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/component/card.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/component/cardInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/component/cardInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/component/navBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/component/navBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/component/poster.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/component/poster.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/component/rating.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/component/rating.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/component/typesOfMovieCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/component/typesOfMovieCards.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/movie-info/[movieId]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/movie-info/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/@modal/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/type.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,29 +42,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "5-create-footer-for-website",
-    "last_opened_file_path": "/Users/xvinay28x/movie-mania",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/xvinay28x/movie-mania/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/xvinay28x/movie-mania/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;10-make-a-component-to-get-movies-info-by-movie-id&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/xvinay28x/movie-mania&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/xvinay28x/movie-mania/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/xvinay28x/movie-mania/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/@modal/movie" />
+      <recent name="$PROJECT_DIR$/app/@modal" />
       <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/app/component" />
+      <recent name="$PROJECT_DIR$/app/movie/@modal/[movieId]" />
+      <recent name="$PROJECT_DIR$/app/movie/@modal" />
     </key>
   </component>
   <component name="RunManager">
@@ -83,7 +94,13 @@
       <workItem from="1708415306268" duration="85000" />
       <workItem from="1708446341386" duration="6219000" />
       <workItem from="1708457664023" duration="3301000" />
-      <workItem from="1708532284332" duration="7054000" />
+      <workItem from="1708532284332" duration="7502000" />
+      <workItem from="1708628558485" duration="499000" />
+      <workItem from="1708858072939" duration="17864000" />
+      <workItem from="1708944440905" duration="9601000" />
+      <workItem from="1709042713573" duration="2056000" />
+      <workItem from="1709364835518" duration="429000" />
+      <workItem from="1709365773391" duration="6617000" />
     </task>
     <servers />
   </component>
