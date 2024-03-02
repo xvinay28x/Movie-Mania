@@ -17,7 +17,9 @@ export default function CardInfo({
   return (
     <>
       <div className="flex flex-col">
-        <div className="text-lg">{movieInfo.title}</div>
+        <div className="text-lg">
+          {movieInfo.title ?? movieInfo.original_name}
+        </div>
         <div className="flex justify-start">
           <Rating rating={rating} />
         </div>
@@ -29,7 +31,7 @@ export default function CardInfo({
       <div
         className="btn mt-4 btn-outline btn-info btn-sm"
         onClick={() => {
-          router.push(`./movie-info/${movieInfo.id}`)
+          router.push(`/movie/${movieInfo.id}`)
         }}
       >
         More info

@@ -25,8 +25,8 @@ export default function TypeCards({
   }, [])
 
   return (
-    <div className="text-2xl mt-4">
-      <p className="cursor-pointer">{title}</p>
+    <div className="text-2xl mt-4 px-2">
+      <p className="cursor-pointer font-bold lg:text-4xl text-white">{title}</p>
       <div className="grid grid-flow-col scrollbar-hide gap-4 items-center w-full overflow-x-scroll scroll-smooth py-4">
         {loading
           ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
