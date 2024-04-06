@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 export default function Rating({
   rating,
@@ -6,37 +8,12 @@ export default function Rating({
   rating: number
 }): React.ReactElement {
   return (
-    <div className="rating rating-sm">
-      <input
-        type="radio"
-        name="rating-2"
-        className="mask mask-star-2 bg-orange-400"
-        checked={rating === 1}
-      />
-      <input
-        type="radio"
-        name="rating-2"
-        className="mask mask-star-2 bg-orange-400"
-        checked={rating === 2}
-      />
-      <input
-        type="radio"
-        name="rating-2"
-        className="mask mask-star-2 bg-orange-400"
-        checked={rating === 3}
-      />
-      <input
-        type="radio"
-        name="rating-2"
-        className="mask mask-star-2 bg-orange-400"
-        checked={rating === 4}
-      />
-      <input
-        type="radio"
-        name="rating-2"
-        className="mask mask-star-2 bg-orange-400"
-        checked={rating === 5}
-      />
+    <div>
+      <FontAwesomeIcon icon={faStar} color={rating >= 1 ? 'orange' : 'gray'} />
+      <FontAwesomeIcon icon={faStar} color={rating >= 2 ? 'orange' : 'gray'} />
+      <FontAwesomeIcon icon={faStar} color={rating >= 3 ? 'orange' : 'gray'} />
+      <FontAwesomeIcon icon={faStar} color={rating >= 4 ? 'orange' : 'gray'} />
+      <FontAwesomeIcon icon={faStar} color={rating >= 5 ? 'orange' : 'gray'} />
     </div>
   )
 }

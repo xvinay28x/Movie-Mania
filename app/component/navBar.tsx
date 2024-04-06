@@ -9,7 +9,7 @@ export default function NavBar() {
 
   return (
     <>
-      <div className="p-4">
+      <div className="p-4  bg-black w-full">
         <div className="navbar bg-stone-900 text-white rounded-2xl hover:shadow-2xl">
           <div className="navbar-start">
             <Image
