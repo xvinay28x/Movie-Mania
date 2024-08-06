@@ -3,7 +3,7 @@
 import { MovieType, fetchMoviesAtom, isLoading } from '../store'
 import { MovieResult } from '../type'
 import { useEffect, useState } from 'react'
-import MovieCard from '@/app/component/card'
+import Card from '@/app/component/card'
 import Skeleton from '@/app/component/skeleton'
 import { useAtom } from 'jotai'
 
@@ -15,7 +15,9 @@ export default function TypeCards({
   movieType: MovieType
 }) {
   const [moviesInfo, setMoviesInfo] = useState<MovieResult>()
+
   const [, getMovie] = useAtom(fetchMoviesAtom)
+
   const [loading] = useAtom(isLoading)
 
   useEffect(() => {
@@ -33,7 +35,7 @@ export default function TypeCards({
               <Skeleton key={item} />
             ))
           : moviesInfo?.results.map((movie) => (
-              <MovieCard movieInfo={movie} key={movie.id} />
+              <Card movieInfo={movie} key={movie.id} />
             ))}
       </div>
     </div>
