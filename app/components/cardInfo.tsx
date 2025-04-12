@@ -1,6 +1,6 @@
 'use client'
 
-import Rating from '@/app/component/rating'
+import Rating from '@/app/components/rating'
 import React from 'react'
 import { Movie } from '@/app/type'
 import { useRouter } from 'next/navigation'
@@ -31,7 +31,7 @@ export default function CardInfo({
             {movieInfo.overview}
           </div>
         </div>
-        <div className='w-2/3 '>
+        <div className="w-2/3 ">
           <div
             className="flex btn btn-outline btn-info btn-sm"
             onClick={() => {

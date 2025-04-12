@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { MovieInfoType } from '@/app/type'
 import { useAtom } from 'jotai'
 import { fetchMovieInfoById, isLoading } from '@/app/store'
-import MoviePoster from '@/app/component/poster'
+import MoviePoster from '@/app/components/poster'
 
 export default function MovieInfo({
   movieId,
