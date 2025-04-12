@@ -1,5 +1,5 @@
 import React from 'react'
-import MovieInfo from '@/app/component/movieInfo'
+import MovieInfo from '@/app/components/movieInfo'
 
 export default function Movie({
   params: { movieId },
