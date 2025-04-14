@@ -6,7 +6,7 @@ import { MovieType } from '@/app/store'
 
 export default function Home(): ReactElement {
   return (
-    <div className="bg-black px-0 md:px-2 lg:px-6 mt-4 md:mt-10">
+    <div className="px-0 md:px-2 lg:px-6 mt-4 md:mt-10 h-full">
       <TypeCards title={'Only On Netflix'} movieType={MovieType.Netflix} />
 
       <TypeCards title={'Trending'} movieType={MovieType.TrendingMovies} />

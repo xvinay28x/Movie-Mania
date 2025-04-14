@@ -1,5 +1,11 @@
 import { atom } from 'jotai'
-import { MovieInfoType, MovieResult } from './type'
+import {
+  MovieCredits,
+  MovieImages,
+  MovieInfoType,
+  MovieResult,
+  Video,
+} from './type'
 
 const api_key = process.env.API_KEY
 
@@ -18,12 +24,14 @@ const requests = {
 
 export const themeAtom = atom<string>('dark')
 
-export const isLoading = atom<boolean>(true)
+export const isLoadingAtom = atom<boolean>(false)
+
+export const isSearchIconClickedAtom = atom<boolean>(false)
 
 export const fetchMoviesAtom = atom(
   null,
   async (get, set, type: MovieType): Promise<MovieResult> => {
-    set(isLoading, true)
+    set(isLoadingAtom, true)
     let response
     switch (type) {
       case MovieType.Netflix: {
@@ -67,7 +75,7 @@ export const fetchMoviesAtom = atom(
         break
       }
     }
-    set(isLoading, false)
+    set(isLoadingAtom, false)
     return response.json()
   },
 )
@@ -85,14 +93,66 @@ export enum MovieType {
   TrendingMovies = 'Trending',
 }
 
-export const fetchMovieInfoById = atom(
+export const movieAtom = atom<MovieInfoType | null>(null)
+
+export const fetchMovieByIdAtom = atom(
   null,
-  async (get, set, movieId: number): Promise<MovieInfoType> => {
-    set(isLoading, true)
+  async (get, set, movieId: number) => {
+    set(isLoadingAtom, true)
     const response = await fetch(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}`,
     )
-    set(isLoading, false)
-    return response.json()
+    const jsonResponse = await response.json()
+    set(fetchMovieCastsAtom, movieId)
+    set(fetchMovieImagesAtom, movieId)
+    set(fetchMovieVideosAtom, movieId)
+    set(searchMovieAtom)
+    set(movieAtom, jsonResponse)
+    set(isLoadingAtom, false)
   },
 )
+
+export const movieCastAtom = atom<MovieCredits | null>(null)
+
+const fetchMovieCastsAtom = atom(null, async (get, set, movieId: number) => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${api_key}`,
+  )
+  const jsonResponse = await response.json()
+  set(movieCastAtom, jsonResponse)
+})
+
+export const movieImagesAtom = atom<MovieImages | null>(null)
+
+const fetchMovieImagesAtom = atom(null, async (get, set, movieId: number) => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/images?api_key=${api_key}`,
+  )
+  const jsonResponse = await response.json()
+  set(movieImagesAtom, jsonResponse)
+})
+
+export const movieVideosAtom = atom<Video | null>(null)
+
+const fetchMovieVideosAtom = atom(null, async (get, set, movieId: number) => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${api_key}`,
+  )
+  const jsonResponse = await response.json()
+  set(movieImagesAtom, jsonResponse)
+})
+
+export const searchedMovieAtom = atom<MovieResult | null>(null)
+
+export const queryAtom = atom<string | null>(null)
+
+export const searchMovieAtom = atom(null, async (get, set) => {
+  set(isLoadingAtom, true)
+  const query = get(queryAtom)
+  const response = await fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}`,
+  )
+  const jsonResponse = await response.json()
+  set(searchedMovieAtom, jsonResponse)
+  set(isLoadingAtom, false)
+})

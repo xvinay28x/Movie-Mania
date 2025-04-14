@@ -16,7 +16,7 @@ export default function CardInfo({
 
   return (
     <>
-      <div className="flex flex-col justify-between h-full w-52 aspect-[2/3] p-4">
+      <div className="flex flex-col justify-between h-full w-28 md:w-44 lg:w-52 aspect-[2/3] p-4">
         <div>
           <div className="text-lg cursor-default">
             {movieInfo.title ?? movieInfo.original_name}
@@ -31,7 +31,7 @@ export default function CardInfo({
             {movieInfo.overview}
           </div>
         </div>
-        <div className="w-2/3 ">
+        <div className="w-2/3">
           <div
             className="flex btn btn-outline btn-info btn-sm"
             onClick={() => {

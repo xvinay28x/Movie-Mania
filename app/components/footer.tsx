@@ -13,7 +13,7 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 export default function Footer(): React.ReactElement {
   const router = useRouter()
   return (
-    <div className="flex flex-col gap-4 items-center p-4 bg-black text-white justify-center border-t border-stone-900 mt-10 py-10">
+    <div className="flex flex-col z-50 bottom-0 gap-4 items-center p-4 bg-black text-white justify-center border-t border-stone-900 mt-10 py-10">
       <div className="flex gap-4">
         <FontAwesomeIcon
           icon={faInstagram}

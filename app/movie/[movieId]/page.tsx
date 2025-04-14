@@ -9,7 +9,7 @@ export default function Movie({
   }
 }): React.ReactElement {
   return (
-    <div className="flex absolute w-full bg-transparent top-0 items-center justify-center">
+    <div className="flex w-full bg-transparent items-center justify-center">
       <MovieInfo movieId={movieId} />
     </div>
   )

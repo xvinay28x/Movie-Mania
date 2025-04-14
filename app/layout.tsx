@@ -13,19 +13,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: {
   children: React.ReactNode
-  modal: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className} antialiased bg-black justify-center`}
-      >
-        <div className="sticky top-0 z-50">
-          <NavBar />
-        </div>
+    <html lang="en" data-theme="dark">
+      <body className={`${inter.className} bg-black justify-center`}>
+        <NavBar />
         {children}
         <Footer />
       </body>
