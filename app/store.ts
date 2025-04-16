@@ -1,5 +1,6 @@
 import { atom } from 'jotai'
 import {
+  Movie,
   MovieCredits,
   MovieImages,
   MovieInfoType,
@@ -142,17 +143,24 @@ const fetchMovieVideosAtom = atom(null, async (get, set, movieId: number) => {
   set(movieImagesAtom, jsonResponse)
 })
 
-export const searchedMovieAtom = atom<MovieResult | null>(null)
+export const AllMoviesAtom = atom<Movie[]>([])
 
-export const queryAtom = atom<string | null>(null)
+export const pageAtom = atom<number>(1)
+
+export const queryAtom = atom<string>('')
 
 export const searchMovieAtom = atom(null, async (get, set) => {
   set(isLoadingAtom, true)
   const query = get(queryAtom)
+  const page = get(pageAtom)
   const response = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}`,
+    `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}&page=${page}`,
   )
-  const jsonResponse = await response.json()
-  set(searchedMovieAtom, jsonResponse)
+  const jsonResponse: MovieResult = await response.json()
+  if (jsonResponse.page === 1) {
+    set(AllMoviesAtom, jsonResponse.results)
+  } else {
+    set(AllMoviesAtom, (prev) => [...prev, ...jsonResponse.results])
+  }
   set(isLoadingAtom, false)
 })

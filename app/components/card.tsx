@@ -20,7 +20,11 @@ export default function Card({ movieInfo }: { movieInfo: Movie }) {
         className={`w-full h-full cursor-pointer rounded-md ${!loaded ? 'opacity-0' : 'opacity-100'}`}
         onLoadingComplete={() => setLoaded(true)}
       />
-      {!loaded && <Skeleton key={movieInfo.id} />}
+      {!loaded && (
+        <div className="absolute">
+          <Skeleton key={movieInfo.id} />
+        </div>
+      )}
 
       <div className="absolute hidden lg:block w-28 md:w-44 lg:w-52 border-stone-700 delay-75 border-2 justify-between invisible opacity-90 group-hover:visible hover:transition ease-in-out rounded-md bg-black text-white text-left text-sm h-full scrollbar-hide">
         <CardInfo movieInfo={movieInfo} />

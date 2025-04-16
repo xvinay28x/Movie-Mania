@@ -48,7 +48,7 @@ export default function Footer(): React.ReactElement {
           }}
         />
       </div>
-      <div className="text-center">
+      <div className="text-center text-stone-700">
         © 2025 Movie Mania by Vinay Garg. All rights reserved.
       </div>
     </div>
